@@ -247,26 +247,31 @@ class AboutMeSection extends StatelessWidget {
   }
 
   Widget _buildInfoChip(ThemeData theme, IconData icon, String label) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      decoration: BoxDecoration(
-        color: Colors.black87,
-        borderRadius: BorderRadius.circular(30),
-        border: Border.all(color: Colors.grey.withOpacity(0.3)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, color: Colors.blue.shade400, size: 16),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              label,
-              maxLines: 2,
-              style: theme.textTheme.bodyMedium?.copyWith(color: Colors.white),
+    return IntrinsicWidth(
+      // <— para medir ancho de hijos
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        decoration: BoxDecoration(
+          color: Colors.black87,
+          borderRadius: BorderRadius.circular(30),
+          border: Border.all(color: Colors.grey.withOpacity(0.3)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min, // <— fila se encoge al contenido
+          children: [
+            Icon(icon, color: Colors.blue.shade400, size: 16),
+            const SizedBox(width: 8),
+            Flexible(
+              fit: FlexFit.loose, // <— no obliga a estirar
+              child: Text(
+                label,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textTheme.bodyMedium?.copyWith(color: Colors.white),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

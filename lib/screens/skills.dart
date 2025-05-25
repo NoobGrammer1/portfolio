@@ -419,22 +419,21 @@ class SkillsSection extends StatelessWidget {
     String text,
     Color color,
   ) {
-    return Expanded(
-      child: Row(
-        children: [
-          Icon(icon, color: color, size: 20),
-          const SizedBox(width: 8),
-          Flexible(
-            child: Text(
-              text,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-              ),
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, color: color, size: 20),
+        const SizedBox(width: 8),
+        Flexible(
+          child: Text(
+            text,
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
