@@ -1,0 +1,32 @@
+name: flutter_portfolio
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0-334.4.beta
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.5
+  lucide_icons_flutter: ^3.0.3
+  iconify_flutter: ^0.0.7
+  colorful_iconify_flutter: ^0.0.5
+  syncfusion_flutter_pdfviewer: ^29.1.38
+  google_fonts: ^6.2.1
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  scrollable_positioned_list: ^0.3.8
+  cached_network_image: ^3.4.1
+  flutter_launcher_icons: ^0.14.3
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/resume.pdf
